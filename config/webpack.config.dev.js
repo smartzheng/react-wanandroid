@@ -34,19 +34,19 @@ const env = getClientEnvironment(publicUrl);
 
 const getStyleLoaders = (cssOptions, preProcessor) => {
   const loaders = [
-    require.resolve('style-loader'),
+    require.resolve('style-loader'), //处理style文件
     {
-      loader: require.resolve('css-loader'),
+      loader: require.resolve('css-loader'), //处理css文件
       options: cssOptions,
     },
     {
-      loader: require.resolve('postcss-loader'),
+      loader: require.resolve('postcss-loader'), //css文件预处理
       options: {
         ident: 'postcss',
         plugins: () => [
           require('postcss-flexbugs-fixes'),
           require('postcss-preset-env')({
-            autoprefixer: {
+            autoprefixer: { //添加不同浏览器css前缀
               flexbox: 'no-2009',
             },
             stage: 3,
@@ -82,7 +82,7 @@ module.exports = {
   bail: false,
   devtool: 'cheap-module-source-map',
   entry: [
-    'babel-polyfill',
+    '@babel/polyfill',
     require.resolve('./polyfills'),
     require.resolve('react-dev-utils/webpackHotDevClient'),
     paths.appIndexJs,
@@ -132,7 +132,6 @@ module.exports = {
               formatter: require.resolve('react-dev-utils/eslintFormatter'),
               eslintPath: require.resolve('eslint'),
               resolvePluginsRelativeTo: __dirname,
-
             },
             loader: require.resolve('eslint-loader'),
           },
@@ -213,9 +212,6 @@ module.exports = {
               getLocalIdent: getCSSModuleLocalIdent,
             }),
           },
-          // Opt-in support for SASS (using .scss or .sass extensions).
-          // By default we support SASS Modules with the
-          // extensions .module.scss or .module.sass
           {
             test: sassRegex,
             exclude: sassModuleRegex,
@@ -226,14 +222,8 @@ module.exports = {
               },
               'sass-loader'
             ),
-            // Don't consider CSS imports dead code even if the
-            // containing package claims to have no side effects.
-            // Remove this when webpack adds a warning or an error for this.
-            // See https://github.com/webpack/webpack/issues/6571
             sideEffects: true,
           },
-          // Adds support for CSS Modules, but using SASS
-          // using the extension .module.scss or .module.sass
           {
             test: sassModuleRegex,
             use: getStyleLoaders(

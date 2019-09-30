@@ -98,7 +98,7 @@ module.exports = {
   bail: true,
   devtool: false,
   entry: [
-    'babel-polyfill',
+    '@babel/polyfill',
     require.resolve('./polyfills'),
     paths.appIndexJs,
   ].filter(Boolean),
