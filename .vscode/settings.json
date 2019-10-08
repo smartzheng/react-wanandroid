@@ -1,0 +1,12 @@
+{
+  "jumpToAliasFile.alias": {
+    "react-native": "react-native-web",
+    "@": "/Users/smartzheng/WebstormProjects/react-wanandroid/src",
+    "@pages": "/Users/smartzheng/WebstormProjects/react-wanandroid/src/pages",
+    "@api": "/Users/smartzheng/WebstormProjects/react-wanandroid/src/api",
+    "@common": "/Users/smartzheng/WebstormProjects/react-wanandroid/src/common",
+    "@utils": "/Users/smartzheng/WebstormProjects/react-wanandroid/src/utils",
+    "@assets": "/Users/smartzheng/WebstormProjects/react-wanandroid/src/assets",
+    "react-dom": "@hot-loader/react-dom"
+  }
+}

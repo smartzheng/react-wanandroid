@@ -107,6 +107,11 @@ module.exports = {
     alias: {
       'react-native': 'react-native-web',
       '@': path.resolve('src'),
+      '@pages': path.resolve('src/pages'),
+      '@api': path.resolve('src/api'),
+      '@common': path.resolve('src/common'),
+      '@utils': path.resolve('src/utils'),
+      '@assets': path.resolve('src/assets'),
       'react-dom': '@hot-loader/react-dom',
     },
     plugins: [
