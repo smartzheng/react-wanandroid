@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
 import React from 'react';
-import './style.scss';
 import BottomNavigator from './components/bottomNavigator'
 import Header from '@common/header'
 function Home() {
