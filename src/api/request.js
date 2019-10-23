@@ -6,7 +6,7 @@ import * as Urls from './urls'
  */
 class Request extends Server {
   async getBanners() {
-    return await this.get(Urls.banner);
+    return await super.call('get', Urls.banner);
   }
 }
 

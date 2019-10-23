@@ -1,3 +1,11 @@
+/*
+ * @Description: 全局style
+ * @Date: 2019-10-08 18:38:13
+ * @Author: smartzheng
+ * @Blog: https://smartzheng.github.io
+ * @GitHub: https://github.com/smartzheng
+ * @LastEditTime: 2019-10-14 16:21:55
+ */
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
@@ -139,9 +147,11 @@ export const GlobalStyle = createGlobalStyle`
 		color: #333333;
 		background: #f5f7f9;
 		font-size: .28rem;
+		height: 100%;
 	}
-	html a {
+	html{
 		color: #333333;
+		height: 100%;
 	}
 	.none,
 	.hidden {

@@ -26,15 +26,8 @@ import toast from '../utils/toast'
 */
 
 export default class Server {
-  async post(url, params) {
-    axios('post', url, params)
-  }
 
-  async get(url, params) {
-    axios('get', url, params)
-  }
-
-  async axios(method, url, params) {
+  async call(method, url, params) {
     if (typeof params !== 'object') params = {};
     let option = params;
     option = {
@@ -50,7 +43,7 @@ export default class Server {
       },
     };
     try {
-      let res = axios.request(option)
+      let res = await axios.request(option)
       const data = res.data
       return new Promise((resolve, reject) => {
         if (data.errorCode === 0) {
