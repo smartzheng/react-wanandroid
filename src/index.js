@@ -3,7 +3,7 @@
  * @Author: smartzheng
  * @Blog: https://smartzheng.github.io
  * @GitHub: https://github.com/smartzheng
- * @LastEditTime: 2019-10-23 18:10:58
+ * @LastEditTime: 2019-10-24 15:02:03
  */
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -19,7 +19,7 @@ ReactDOM.render(
   , document.getElementById('root'));
 
 if (process.env.NODE_ENV === 'development') {
-  serviceWorker.register();
+  serviceWorker.unregister();
 } else {
   serviceWorker.register();
 }

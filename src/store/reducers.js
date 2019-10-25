@@ -3,15 +3,15 @@
  * @Author: smartzheng
  * @Blog: https://smartzheng.github.io
  * @GitHub: https://github.com/smartzheng
- * @LastEditTime: 2019-10-14 18:28:40
+ * @LastEditTime: 2019-10-24 15:04:08
  */
 import { combineReducers } from 'redux-immutable';
 import { mainReducer } from "@pages/main/store";
-import { homeReducer } from "@pages/home/store";
-import { systemReducer } from "@pages/system/store";
-import { accountsReducer } from "@pages/accounts/store";
-import { navigationReducer } from "@pages/navigation/store";
-import { projectsReducer } from "@pages/projects/store";
+import { homeReducer } from "@pages/main/home/store";
+import { systemReducer } from "@pages/main/system/store";
+import { accountsReducer } from "@pages/main/accounts/store";
+import { navigationReducer } from "@pages/main/navigation/store";
+import { projectsReducer } from "@pages/main/projects/store";
 import { bottomBarReducer } from "@common/bottomBar/store";
 import { headerReducer } from "@common/header/store";
 

@@ -4,24 +4,35 @@
  * @Author: smartzheng
  * @Blog: https://smartzheng.github.io
  * @GitHub: https://github.com/smartzheng
- * @LastEditTime: 2019-10-23 17:05:22
+ * @LastEditTime: 2019-10-25 10:00:28
  */
 
-import { connect } from 'react-redux';
-import React, { useEffect } from 'react';
-import { actions } from './store';
-import SwipeableViews from 'react-swipeable-views';
-import { BannerItem, HomeList } from './style'
-import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
+import React, { useEffect } from 'react'
+import { actions } from './store'
+import SwipeableViews from 'react-swipeable-views'
+import { BannerItem } from './style'
+import HomeList from './components/list'
 function Home(props) {
   const {
+    banners,
     getBanners,
-    banners
-  } = props;
+    currentPage,
+    articles,
+    getArticles
+  } = props
 
   useEffect(() => {
     getBanners()
   }, [getBanners])
+
+  useEffect(() => {
+    getArticles(currentPage)
+  }, [getArticles, currentPage])
+
+  function onBannerClick(banner) {
+    window.location.href = banner.get('url')
+  }
 
   return (
     <>
@@ -30,27 +41,37 @@ function Home(props) {
           banners.sort((pre, next) => {
             return pre.order - next.order
           }).map(banner => {
-            return <Link
-              to={`/bannerDetail/${banner.get('id')}`}
-              key={banner.get('id')}>
-              <BannerItem
-                imagePath={banner.get('imagePath')} >
-              </BannerItem>
-            </Link>
+            return <BannerItem
+              onClick={() => onBannerClick(banner)}
+              key={banner.get('id')}
+              imagePath={banner.get('imagePath')} >
+              <div className='banner-title'>
+                {banner.get('title')}
+              </div>
+            </BannerItem>
           })}
       </SwipeableViews>
-      <HomeList></HomeList>
+      <HomeList articles={articles} />
     </>
   )
-};
+}
 
 function mapState(state) {
-  return { banners: state.getIn(['home', 'banners']) };
-};
+  return {
+    banners: state.getIn(['home', 'banners']),
+    currentPage: state.getIn(['home', 'currentPage']),
+    articles: state.getIn(['home', 'articles']),
+  }
+}
 function mapDispatch(dispatch) {
-  return { getBanners: () => dispatch(actions.getBanners()) };
-};
+  return {
+    getBanners: () => dispatch(actions.getBanners()),
+    getArticles: (currentPage) => {
+      dispatch(actions.getArticles(currentPage))
+    },
+  }
+}
 export default connect(
   mapState,
   mapDispatch
-)(Home);
+)(Home)

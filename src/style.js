@@ -4,7 +4,7 @@
  * @Author: smartzheng
  * @Blog: https://smartzheng.github.io
  * @GitHub: https://github.com/smartzheng
- * @LastEditTime: 2019-10-14 16:21:55
+ * @LastEditTime: 2019-10-25 09:29:14
  */
 import { createGlobalStyle } from 'styled-components';
 
@@ -145,7 +145,7 @@ export const GlobalStyle = createGlobalStyle`
 	body {
 		font-family: "PingFangSC-Regular", "Microsoft YaHei", Helvetica;
 		color: #333333;
-		background: #f5f7f9;
+		background: #fff;
 		font-size: .28rem;
 		height: 100%;
 	}
@@ -165,6 +165,16 @@ export const GlobalStyle = createGlobalStyle`
 			width: 768px;
 			margin: 0 auto;
 		}
+	}
+	.flex{
+		display: flex;
+	}
+	.flex-align-center{
+		display: flex;
+		align-items:center;
+	}
+	.flex-1{
+		flex: 1;
 	}
 `;
 

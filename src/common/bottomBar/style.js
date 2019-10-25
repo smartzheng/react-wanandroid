@@ -3,7 +3,7 @@
  * @Author: smartzheng
  * @Blog: https://smartzheng.github.io
  * @GitHub: https://github.com/smartzheng
- * @LastEditTime: 2019-10-23 16:20:13
+ * @LastEditTime: 2019-10-24 17:09:44
  */
 import styled from 'styled-components';
 
@@ -18,6 +18,7 @@ export const BottomBarWrapper = styled('div')`
   border-color:#eee;
   left:0;
   right:0;
+  background:#fff
 `
 export const BottomBarTabWrapper = styled('div')`
   display:flex;
