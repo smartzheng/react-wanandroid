@@ -3,17 +3,19 @@
  * @Author: smartzheng
  * @Blog: https://smartzheng.github.io
  * @GitHub: https://github.com/smartzheng
- * @LastEditTime: 2019-10-25 10:09:08
+ * @LastEditTime: 2019-10-25 11:47:50
  */
 import React from 'react'
 import { ListWrapper, ListItem } from './style'
 //import likeIcon from '@assets/images/like.png'
 import dislikeIcon from '@assets/images/dislike.png'
+import { toWeb } from '@utils/navigate'
+
 function HomeList(props) {
   const { articles } = props
 
   function onItemClick(article) {
-    window.location.href = article.get('link')
+    toWeb(article.get('link'))
   }
 
   return (

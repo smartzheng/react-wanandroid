@@ -4,7 +4,7 @@
  * @Author: smartzheng
  * @Blog: https://smartzheng.github.io
  * @GitHub: https://github.com/smartzheng
- * @LastEditTime: 2019-10-14 16:25:32
+ * @LastEditTime: 2019-10-25 11:35:41
  */
 export const commonStyle = {
   headerHeight: '0.8rem'

@@ -3,14 +3,13 @@
  * @Author: smartzheng
  * @Blog: https://smartzheng.github.io
  * @GitHub: https://github.com/smartzheng
- * @LastEditTime: 2019-10-14 17:02:28
+ * @LastEditTime: 2019-10-25 11:37:12
  */
 import styled from 'styled-components';
-import headerBg from '@assets/images/blue_gradient_bg.png';
 import { commonStyle } from '@common/styled';
 export const HeaderWrapper = styled('header')`
   .header-content{
-    background: url(${headerBg});
+    background: #59C9EF;
     position:fixed;
     top:0;
     left:0;

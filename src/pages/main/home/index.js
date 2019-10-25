@@ -4,7 +4,7 @@
  * @Author: smartzheng
  * @Blog: https://smartzheng.github.io
  * @GitHub: https://github.com/smartzheng
- * @LastEditTime: 2019-10-25 10:00:28
+ * @LastEditTime: 2019-10-25 11:46:46
  */
 
 import { connect } from 'react-redux'
@@ -13,6 +13,7 @@ import { actions } from './store'
 import SwipeableViews from 'react-swipeable-views'
 import { BannerItem } from './style'
 import HomeList from './components/list'
+import { toWeb } from '@utils/navigate'
 function Home(props) {
   const {
     banners,
@@ -31,7 +32,7 @@ function Home(props) {
   }, [getArticles, currentPage])
 
   function onBannerClick(banner) {
-    window.location.href = banner.get('url')
+    toWeb(banner.get('url'))
   }
 
   return (
