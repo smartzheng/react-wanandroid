@@ -7,34 +7,18 @@
  * @LastEditTime: 2019-10-23 16:18:46
  */
 import React from 'react'
-import * as actions from './store/actions'
 import { BottomBarTabWrapper } from './style'
-import { connect } from 'react-redux'
 function BottomBarTab(props) {
-  const { tab, changeTab, position } = props
+  const { tab, selected} = props
   return (
     <BottomBarTabWrapper
-      onClick={e => changeTab(position)}
-      selectedIcon={tab.get('selectedIcon')}
-      unSelectedIcon={tab.get('unSelectedIcon')}
-      isSelected={tab.get('isSelected')}>
+      selectedIcon={tab.selectedIcon}
+      unSelectedIcon={tab.unSelectedIcon}
+      isSelected={selected}>
       <div className='bottom-bar-tab-icon' />
-      <div>{tab.get('title')}</div>
+      <div>{tab.title}</div>
     </BottomBarTabWrapper>
   )
 }
 
-function mapState(state) {
-  return {}
-}
-function mapDispatch(dispatch) {
-  return {
-    changeTab(index) {
-      dispatch(actions.setSelectedTab(index))
-    }
-  }
-}
-export default connect(
-  mapState,
-  mapDispatch
-)(BottomBarTab)
+export default BottomBarTab

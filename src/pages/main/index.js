@@ -6,8 +6,7 @@
  * @GitHub: https://github.com/smartzheng
  * @LastEditTime: 2019-10-24 14:23:29
  */
-import { connect } from 'react-redux';
-import React, { useCallback } from 'react';
+import React, { useCallback,useState } from 'react';
 import BottomBar from '@common/bottomBar';
 import Home from '@pages/main/home';
 import System from '@pages/main/system';
@@ -16,9 +15,9 @@ import Navigation from '@pages/main/navigation';
 import Projects from '@pages/main/projects';
 //import { actions } from './store';
 import { MainWrapper } from './style'
-function Main(props) {
+function Main() {
 
-  const { selectedTab } = props
+  const [selectedTab, setSeletedTab] = useState(0)
 
   const getCurrentPage = useCallback(() => {
     switch (selectedTab) {
@@ -33,25 +32,19 @@ function Main(props) {
       case 4:
         return <Projects />
       default:
-        return null
+        return <Home />
     }
   }, [selectedTab])
+
+  const handleChange = (index)=>{
+    setSeletedTab(index)
+  }
 
   return (
     <MainWrapper>
       {getCurrentPage()}
-      <BottomBar />
+      <BottomBar onChange={handleChange}/>
     </MainWrapper >
   )
 };
-
-function mapState(state) {
-  return { selectedTab: state.getIn(['bottomBar', 'selectedTab']) };
-};
-function mapDispatch(dispatch) {
-  return {};
-};
-export default connect(
-  mapState,
-  mapDispatch
-)(Main);
+export default Main;

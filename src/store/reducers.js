@@ -12,7 +12,6 @@ import { systemReducer } from "@pages/main/system/store";
 import { accountsReducer } from "@pages/main/accounts/store";
 import { navigationReducer } from "@pages/main/navigation/store";
 import { projectsReducer } from "@pages/main/projects/store";
-import { bottomBarReducer } from "@common/bottomBar/store";
 import { headerReducer } from "@common/header/store";
 
 const reducers = combineReducers({
@@ -22,7 +21,6 @@ const reducers = combineReducers({
   accounts: accountsReducer,
   navigation: navigationReducer,
   projects: projectsReducer,
-  bottomBar: bottomBarReducer,
   header: headerReducer,
 });
 export default reducers;

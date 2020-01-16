@@ -11,11 +11,11 @@ export const BottomBarWrapper = styled('div')`
   height: 1rem;
   display:flex;
   justify-content:space-between;
+  align-items:center;
   padding:0 .5rem;
   position:fixed;
   bottom:0;
-  border-top-width:.1rem;
-  border-color:#eee;
+  box-shadow: 0 -.01rem .01rem .01rem #efefef;
   left:0;
   right:0;
   background:#fff
