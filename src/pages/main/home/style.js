@@ -12,6 +12,7 @@ export const BannerItem = styled('div')`
   height: 4rem;
   background-size:cover;
   position: relative;
+  
   .banner-title{
     position: absolute;
     bottom:0;

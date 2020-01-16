@@ -5,4 +5,4 @@
  * @GitHub: https://github.com/smartzheng
  * @LastEditTime: 2019-10-14 18:06:04
  */
-export const ACTION_NAME = ''
+export const HEADER_SET_TITLE = 'HEADER_SET_TITLE'

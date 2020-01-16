@@ -5,12 +5,20 @@
  * @GitHub: https://github.com/smartzheng
  * @LastEditTime: 2019-10-24 17:09:18
  */
+import { commonStyle } from '@common/styled';
 import styled from 'styled-components';
-
-export const MainWrapper = styled('main')`
+export const MainWrapper = styled('div')`
   flex:1;
-  margin-bottom: 1rem;
-  overflow: hidden,
-
+  position:fixed;
+  height: 100%;
+  top:0;
+  width:100%;
+  .bottom-bar-tab-icon{
+    margin-bottom:.1rem;
+    width:.42rem;
+    height: .42rem;
+  }
 `
-
+export const PageWrapper = styled('div')`
+  margin-top:${commonStyle.headerHeight};
+`

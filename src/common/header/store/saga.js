@@ -9,6 +9,6 @@
 // import Request from '@api/request';
 // import { constants, actions } from './index';
 
-const bottomSaga = [
+const headerSaga = [
 ]
-export default bottomSaga;
+export default headerSaga;

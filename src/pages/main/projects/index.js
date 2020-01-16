@@ -9,13 +9,14 @@
 
 import { connect } from 'react-redux';
 import React from 'react';
+import { PageWrapper } from '../style'
 //import { actions } from './store';
 function Projects(props) {
 
   return (
-    <div>
+    <PageWrapper>
       项目
-    </div>
+    </PageWrapper>
   )
 };
 

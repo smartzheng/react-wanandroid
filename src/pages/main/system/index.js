@@ -6,7 +6,7 @@
  * @GitHub: https://github.com/smartzheng
  * @LastEditTime: 2019-10-14 14:28:06
  */
-
+import { PageWrapper } from '../style'
 import { connect } from 'react-redux';
 import React from 'react';
 // import { actions } from './store';
@@ -14,9 +14,9 @@ import { SystemWrapper } from './style'
 function System(props) {
 
   return (
-    <SystemWrapper>
+    <PageWrapper>
       知识体系
-    </SystemWrapper>
+    </PageWrapper>
   )
 };
 

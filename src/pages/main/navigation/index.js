@@ -9,13 +9,14 @@
 
 import { connect } from 'react-redux';
 import React from 'react';
+import { PageWrapper } from '../style'
 //import { actions } from './store';
 function Navigation(props) {
 
   return (
-    <div>
+    <PageWrapper>
       导航
-    </div>
+    </PageWrapper>
   )
 };
 

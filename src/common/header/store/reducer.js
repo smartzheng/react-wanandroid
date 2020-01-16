@@ -9,13 +9,15 @@
 import { constants } from './index'
 import { fromJS } from "immutable";
 const defaultState = fromJS({
+  title:'玩安卓'
 });
 
 export default (state = defaultState, action) => {
   switch (action.type) {
-    case constants.ACTION_NAME: {
-
-      return state;
+    case constants.HEADER_SET_TITLE: {
+      return state.merge({
+        title: action.payload.title
+      });
     }
     default: {
       return state;

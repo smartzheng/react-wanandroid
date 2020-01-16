@@ -5,6 +5,12 @@
  * @GitHub: https://github.com/smartzheng
  * @LastEditTime: 2019-10-14 13:44:30
  */
-// import { fromJS } from "immutable";
-// import { constants } from "./index";
+import { fromJS } from "immutable";
+import { constants } from "./index";
 
+export function setTitle(title) {
+  return {
+      type: constants.HEADER_SET_TITLE,
+      payload: { title: fromJS(title) },
+  };
+}

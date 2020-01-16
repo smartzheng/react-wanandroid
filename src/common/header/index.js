@@ -6,15 +6,27 @@
  * @GitHub: https://github.com/smartzheng
  * @LastEditTime: 2019-10-14 16:31:57
  */
+import { connect } from 'react-redux'
 import { HeaderWrapper } from './style'
 import React from 'react'
 function Header(props) {
+  const {title} = props
   return (
     <HeaderWrapper>
-      <div className='header-content'></div>
+      <div className='header-content'>{title}</div>
       <div className='header-placeholder'></div>
     </HeaderWrapper>
   )
 }
-
-export default Header
+function mapState(state) {
+  return {
+    title: state.getIn(['header', 'title']),
+  };
+};
+function mapDispatch(dispatch) {
+  return {};
+};
+export default connect(
+  mapState,
+  mapDispatch
+)(Header);

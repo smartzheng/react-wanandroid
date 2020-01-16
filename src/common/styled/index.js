@@ -7,5 +7,5 @@
  * @LastEditTime: 2019-10-25 11:35:41
  */
 export const commonStyle = {
-  headerHeight: '0.8rem'
+  headerHeight: '0.9rem'
 }
