@@ -10,11 +10,11 @@
 import { connect } from 'react-redux'
 import React, { useEffect } from 'react'
 import { actions } from './store'
-import { actions as headerActions } from '@common/header/store'
 import SwipeableViews from 'react-swipeable-views'
 import { BannerItem } from './style'
 import { PageWrapper } from '../style'
 import HomeList from './components/list'
+import Header from '@common/header'
 import { toWeb } from '@utils/navigate'
 function Home(props) {
   const {
@@ -22,13 +22,8 @@ function Home(props) {
     getBanners,
     currentPage,
     articles,
-    setTitle,
     getArticles
   } = props
-
-  useEffect(() => {
-    setTitle()
-  }, [setTitle])
 
   useEffect(() => {
     getBanners()
@@ -44,6 +39,7 @@ function Home(props) {
 
   return (
     <PageWrapper>
+      <Header title={'首页'}/>
       <SwipeableViews>
         {
           banners.sort((pre, next) => {
@@ -76,9 +72,6 @@ function mapDispatch(dispatch) {
     getBanners: () => dispatch(actions.getBanners()),
     getArticles: (currentPage) => {
       dispatch(actions.getArticles(currentPage))
-    },
-    setTitle:() => {
-      dispatch(headerActions.setTitle('首页'))
     }
   }
 }

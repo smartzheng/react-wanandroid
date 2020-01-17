@@ -22,7 +22,4 @@ export const HeaderWrapper = styled('header')`
     height:${commonStyle.headerHeight};
     z-index:99;
   }
-  .header-placeholder{
-    height:${commonStyle.headerHeight};
-  }
 `;

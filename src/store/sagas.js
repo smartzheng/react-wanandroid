@@ -13,7 +13,6 @@ import { navigationSaga } from '@pages/main/navigation/store'
 import { projectsSaga } from '@pages/main/projects/store'
 import { systemSaga } from '@pages/main/system/store'
 import { accountsSaga } from '@pages/main/accounts/store'
-import { headerSaga } from '@common/header/store'
 export default function* rootSaga() {
   yield all([
     ...mainSaga,
@@ -22,6 +21,5 @@ export default function* rootSaga() {
     ...accountsSaga,
     ...navigationSaga,
     ...projectsSaga,
-    ...headerSaga
   ])
 }

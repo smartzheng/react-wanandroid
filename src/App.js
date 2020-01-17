@@ -12,12 +12,10 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import store from './store';
 import Main from './pages/main';
 import BannerDetail from './pages/bannerDetail';
-import Header from '@/common/header';
 function App() {
   return (
     <BrowserRouter>
       <Provider store={store}>
-        <Header />
         <Route component={Main} path={'/'} exact />
         <Route component={BannerDetail} path={'/bannerDetail/:id'} exact />
       </Provider>

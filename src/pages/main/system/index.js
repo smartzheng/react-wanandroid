@@ -10,9 +10,7 @@ import { PageWrapper } from '../style'
 import { connect } from 'react-redux';
 import React from 'react';
 // import { actions } from './store';
-import { SystemWrapper } from './style'
 function System(props) {
-
   return (
     <PageWrapper>
       知识体系
