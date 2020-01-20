@@ -10,7 +10,7 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { GlobalStyle } from '@/style';
-
+import VConsole from 'vconsole';
 ReactDOM.render(
   <>
     <GlobalStyle />
@@ -20,6 +20,7 @@ ReactDOM.render(
 
 if (process.env.NODE_ENV === 'development') {
   serviceWorker.unregister();
+  new VConsole();
 } else {
   serviceWorker.register();
 }

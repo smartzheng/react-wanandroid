@@ -25,97 +25,51 @@ import accountsselectedIcon from '@assets/images/icon_me_selected.png'
 import accountsUnselectedIcon from '@assets/images/icon_me_unselected.png'
 import projectsselectedIcon from '@assets/images/icon_project_selected.png'
 import projectsUnselectedIcon from '@assets/images/icon_project_unselected.png'
+import Header from '../../common/header';
 const tabs = [
   {
-    title: '首页', selectedIcon: homeSelectedIcon, unSelectedIcon: homeUnselectedIcon
+    title: '首页', selectedIcon: homeSelectedIcon, unSelectedIcon: homeUnselectedIcon,component:Home
   },
   {
-    title: '知识体系', selectedIcon: systemselectedIcon, unSelectedIcon: systemUnselectedIcon
+    title: '知识体系', selectedIcon: systemselectedIcon, unSelectedIcon: systemUnselectedIcon,component:System
   },
   {
-    title: '导航', selectedIcon: navigationselectedIcon, unSelectedIcon: navigationUnselectedIcon
+    title: '导航', selectedIcon: navigationselectedIcon, unSelectedIcon: navigationUnselectedIcon,component:Navigation
   },
   {
-    title: '公众号', selectedIcon: accountsselectedIcon, unSelectedIcon: accountsUnselectedIcon
+    title: '公众号', selectedIcon: accountsselectedIcon, unSelectedIcon: accountsUnselectedIcon,component:Accounts
   },
   {
-    title: '项目', selectedIcon: projectsselectedIcon, unSelectedIcon: projectsUnselectedIcon
+    title: '项目', selectedIcon: projectsselectedIcon, unSelectedIcon: projectsUnselectedIcon,component:Projects
   },
 ]
 
 function Main() {
   const [selectedTab, setSeletedTab] = useState(0)
   return (
+    <div>
+      <Header title={tabs[selectedTab].title}/>
     <MainWrapper>
       <TabBar
         unselectedTintColor="#999999"
         tintColor="#333333"
         barTintColor="white"
         tabBarPosition="bottom"
-        prerenderingSiblingsNumber={0}
-      >
-        <TabBar.Item
-          title={tabs[0].title}
-          key={tabs[0].title}
-          icon={<img  className='bottom-bar-tab-icon' src={tabs[0].unSelectedIcon} alt='' /> }
-          selectedIcon={<img className='bottom-bar-tab-icon' src={tabs[0].selectedIcon} alt=''/>}
-          selected={selectedTab === 0}
-          onPress={() => {
-            setSeletedTab(0)
-          }}
-        >
-          {<Home/>}
-        </TabBar.Item>
-        <TabBar.Item
-          icon={<img  className='bottom-bar-tab-icon' src={tabs[1].unSelectedIcon} alt='' /> }
-          selectedIcon={<img  className='bottom-bar-tab-icon' src={tabs[1].selectedIcon} alt=''/>}
-          title={tabs[1].title}
-          key={tabs[1].title}
-          selected={selectedTab === 1}
-          onPress={() => {
-            setSeletedTab(1)
-          }}
-        >
-          {<System/>}
-        </TabBar.Item>
-        <TabBar.Item
-          icon={<img  className='bottom-bar-tab-icon' src={tabs[2].unSelectedIcon} alt='' /> }
-          selectedIcon={<img  className='bottom-bar-tab-icon' src={tabs[2].selectedIcon} alt=''/>}
-          title={tabs[2].title}
-          key={tabs[2].title}
-          selected={selectedTab === 2}
-          onPress={() => {
-            setSeletedTab(2)
-          }}
-        >
-          {<Navigation/>}
-        </TabBar.Item>
-        <TabBar.Item
-          icon={<img  className='bottom-bar-tab-icon' src={tabs[3].unSelectedIcon} alt='' /> }
-          selectedIcon={<img  className='bottom-bar-tab-icon' src={tabs[3].selectedIcon} alt=''/>}
-          title={tabs[3].title}
-          key={tabs[3].title}
-          selected={selectedTab === 3}
-          onPress={() => {
-            setSeletedTab(3)
-          }}
-        >
-          {<Accounts />}
-        </TabBar.Item>
-        <TabBar.Item
-          icon={<img  className='bottom-bar-tab-icon' src={tabs[4].unSelectedIcon} alt='' /> }
-          selectedIcon={<img  className='bottom-bar-tab-icon' src={tabs[4].selectedIcon} alt=''/>}
-          title={tabs[4].title}
-          key={tabs[4].title}
-          selected={selectedTab === 4}
-          onPress={() => {
-            setSeletedTab(4)
-          }}
-        >
-          {<Projects />}
-        </TabBar.Item>
+        prerenderingSiblingsNumber={0}>
+          {tabs.map((tab,index)=>{
+            return <TabBar.Item
+              title={tab.title}
+              key={tab.title}
+              icon={<img  className='bottom-bar-tab-icon' src={tab.unSelectedIcon} alt='' /> }
+              selectedIcon={<img className='bottom-bar-tab-icon' src={tab.selectedIcon} alt=''/>}
+              selected={selectedTab === index}
+              onPress={() => {setSeletedTab(index)}}>
+              {<tab.component/>}
+            </TabBar.Item>
+          })}
       </TabBar>
     </MainWrapper >
+    </div>
   )
 };
 export default Main;

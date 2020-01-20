@@ -6,13 +6,18 @@
  * @LastEditTime: 2019-10-25 10:08:17
  */
 import styled from 'styled-components';
-
+import { commonStyle } from '@common/styled';
+export const HomeWrapper = styled('div')`
+  padding-top:${commonStyle.headerHeight};
+  height:100%;
+  width:100%;
+`
 export const BannerItem = styled('div')`
   background: url(${props => props.imagePath});
   height: 4rem;
+  width:100%;
   background-size:cover;
   position: relative;
-  
   .banner-title{
     position: absolute;
     bottom:0;

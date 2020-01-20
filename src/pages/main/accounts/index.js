@@ -6,15 +6,14 @@
  * @GitHub: https://github.com/smartzheng
  * @LastEditTime: 2019-10-23 16:15:39
  */
-import { PageWrapper } from '../style'
 import { connect } from 'react-redux';
 import React from 'react';
 //import { actions } from './store';
 function Accounts(props) {
   return (
-    <PageWrapper>
-      公众号
-    </PageWrapper>
+    <div>
+      '公众号'
+    </div>
   )
 };
 

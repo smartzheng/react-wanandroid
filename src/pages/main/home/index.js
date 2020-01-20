@@ -10,11 +10,9 @@
 import { connect } from 'react-redux'
 import React, { useEffect } from 'react'
 import { actions } from './store'
-import SwipeableViews from 'react-swipeable-views'
-import { BannerItem } from './style'
-import { PageWrapper } from '../style'
+import { Carousel} from 'antd-mobile';
+import { BannerItem,HomeWrapper } from './style'
 import HomeList from './components/list'
-import Header from '@common/header'
 import { toWeb } from '@utils/navigate'
 function Home(props) {
   const {
@@ -38,25 +36,26 @@ function Home(props) {
   }
 
   return (
-    <PageWrapper>
-      <Header title={'首页'}/>
-      <SwipeableViews>
-        {
-          banners.sort((pre, next) => {
-            return pre.order - next.order
-          }).map(banner => {
-            return <BannerItem
-              onClick={() => onBannerClick(banner)}
-              key={banner.get('id')}
-              imagePath={banner.get('imagePath')} >
-              <div className='banner-title'>
-                {banner.get('title')}
-              </div>
-            </BannerItem>
-          })}
-      </SwipeableViews>
+    <HomeWrapper>
+      <Carousel
+        autoplay
+        infinite
+      >{
+        banners.sort((pre, next) => {
+          return pre.order - next.order
+        }).map(banner => {
+          return <BannerItem
+            onClick={() => onBannerClick(banner)}
+            key={banner.get('id')}
+            imagePath={banner.get('imagePath')} >
+            <div className='banner-title'>
+              {banner.get('title')}
+            </div>
+          </BannerItem>
+        })}
+      </Carousel>
       <HomeList articles={articles} />
-    </PageWrapper >
+    </HomeWrapper >
   )
 }
 

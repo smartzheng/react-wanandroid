@@ -12,6 +12,7 @@ export const ListWrapper = styled('div')`
 `
 export const ListItem = styled('div')`
   width: 100%;
+  color:#333333;
   border-bottom: .01rem solid #eee;
   padding: .3rem .2rem;
   .item-author{
@@ -47,5 +48,22 @@ export const ListItem = styled('div')`
       width:.3rem;
       height:.3rem;
     }
-  }
+  };
 `
+export const BannerItem = styled('div')`
+  background: url(${props => props.imagePath});
+  height: 4rem;
+  background-size:cover;
+  position: relative;
+  .banner-title{
+    position: absolute;
+    bottom:0;
+    height: .5rem;
+    background: #33333333;
+    line-height:.5rem;
+    padding-left:.2rem;
+    color:white;
+    left: 0;
+    right: 0;
+  }
+`;

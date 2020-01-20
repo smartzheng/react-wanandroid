@@ -6,17 +6,17 @@
  * @GitHub: https://github.com/smartzheng
  * @LastEditTime: 2019-10-14 13:45:39
  */
-
+import Header from '@common/header'
 import { connect } from 'react-redux';
 import React from 'react';
-import { PageWrapper } from '../style'
 //import { actions } from './store';
 function Navigation(props) {
 
   return (
-    <PageWrapper>
-      导航
-    </PageWrapper>
+    <div>
+      <Header title={'导航'}/>
+      
+    </div>
   )
 };
 

@@ -13,13 +13,14 @@ export const HeaderWrapper = styled('header')`
     position:fixed;
     display:flex;
     align-items:center;
+    color:white;
     justify-content:center;
     font-weight:500;
-    font-size:.35rem;
+    z-index:999;
+    font-size:.3rem;
     top:0;
     left:0;
     right:0;
     height:${commonStyle.headerHeight};
-    z-index:99;
   }
 `;

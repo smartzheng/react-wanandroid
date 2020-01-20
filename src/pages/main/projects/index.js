@@ -6,17 +6,16 @@
  * @GitHub: https://github.com/smartzheng
  * @LastEditTime: 2019-10-23 16:48:00
  */
-
+import Header from '@common/header'
 import { connect } from 'react-redux';
 import React from 'react';
-import { PageWrapper } from '../style'
 //import { actions } from './store';
 function Projects(props) {
 
   return (
-    <PageWrapper>
-      项目
-    </PageWrapper>
+    <div>
+      <Header title={'项目'}/>
+    </div>
   )
 };
 

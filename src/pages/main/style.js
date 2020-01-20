@@ -5,7 +5,6 @@
  * @GitHub: https://github.com/smartzheng
  * @LastEditTime: 2019-10-24 17:09:18
  */
-import { commonStyle } from '@common/styled';
 import styled from 'styled-components';
 export const MainWrapper = styled('div')`
   flex:1;
@@ -18,7 +17,4 @@ export const MainWrapper = styled('div')`
     width:.42rem;
     height: .42rem;
   }
-`
-export const PageWrapper = styled('div')`
-  margin-top:${commonStyle.headerHeight};
 `
