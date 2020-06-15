@@ -6,7 +6,7 @@
  * @GitHub: https://github.com/smartzheng
  * @LastEditTime: 2019-10-23 18:17:41
  */
-import React,{useState} from 'react'
+import React, { useState } from 'react'
 import { BottomBarWrapper } from './style'
 import BottomBarTab from './BottomBarTab'
 import homeSelectedIcon from '@assets/images/icon_home_selected.png'
@@ -37,11 +37,12 @@ const tabs = [
     title: '项目', selectedIcon: projectsselectedIcon, unSelectedIcon: projectsUnselectedIcon
   },
 ]
-function BottomBar(props) {
+// 底部bar
+function BottomBar (props) {
   const { onChange } = props
   const [selectedTab, setSeletedTab] = useState(0)
-  const changeTab = (index)=>{
-    console.log('changeTab');
+  const changeTab = (index) => {
+    console.log('changeTab')
     setSeletedTab(index)
     onChange(index)
   }
@@ -49,11 +50,11 @@ function BottomBar(props) {
     <BottomBarWrapper>
       {tabs.map((item, index) => {
         return <div onClick={e => changeTab(index)}>
-            <BottomBarTab
+          <BottomBarTab
             key={index}
             selected={index === selectedTab}
-            tab={item} />
-          </div>
+            tab={item}/>
+        </div>
       })}
     </BottomBarWrapper>
   )
