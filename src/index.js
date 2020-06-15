@@ -5,23 +5,24 @@
  * @GitHub: https://github.com/smartzheng
  * @LastEditTime: 2019-10-24 15:02:03
  */
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
-import { GlobalStyle } from '@/style';
-import VConsole from 'vconsole';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import App from './App'
+import * as serviceWorker from './serviceWorker'
+import { GlobalStyle } from '@/style'
+import VConsole from 'vconsole'
+
 ReactDOM.render(
   <>
-    <GlobalStyle />
-    <App />
+    <GlobalStyle/>
+    <App/>
   </>
-  , document.getElementById('root'));
+  , document.getElementById('root'))
 
 if (process.env.NODE_ENV === 'development') {
-  serviceWorker.unregister();
-  new VConsole();
+  serviceWorker.unregister()
+  new VConsole()
 } else {
-  serviceWorker.register();
+  serviceWorker.register()
 }
 
