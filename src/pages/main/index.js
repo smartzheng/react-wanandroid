@@ -71,5 +71,5 @@ function Main() {
     </MainWrapper >
     </div>
   )
-};
+}
 export default Main;
