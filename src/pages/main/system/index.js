@@ -7,24 +7,26 @@
  * @LastEditTime: 2019-10-14 14:28:06
  */
 import { SystemWrapper } from './style'
-import { connect } from 'react-redux';
-import React from 'react';
+import { connect } from 'react-redux'
+import React from 'react'
+
 // import { actions } from './store';
-function System(props) {
+function System (props) {
   return (
     <SystemWrapper>
       知识体系
     </SystemWrapper>
   )
-};
+}
 
-function mapState(state) {
-  return {};
-};
-function mapDispatch(dispatch) {
-  return {};
-};
+function mapState (state) {
+  return {}
+}
+
+function mapDispatch (dispatch) {
+  return {}
+}
 export default connect(
   mapState,
   mapDispatch
-)(System);
+)(System)
